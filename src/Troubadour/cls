@@ -1,0 +1,17 @@
+Microsoft .NET Execution environment Clr-x86-1.0.0-rc1-16202
+
+Usage: dnx [options]
+
+Options:
+  --project|-p <PATH>              Path to the project.json file or the application folder. Defaults to the current folder if not provided.
+  --appbase <PATH>                 Application base directory path
+  --lib <LIB_PATHS>                Paths used for library look-up
+  --debug                          Waits for the debugger to attach before beginning execution.
+  --bootstrapper-debug             Waits for the debugger to attach before bootstrapping runtime.
+  --framework <FRAMEWORK_ID>       Set the framework version to use when running (i.e. dnx451, dnx452, dnx46, ...)
+  -?|-h|--help                     Show help information
+  --version                        Show version information
+  --watch                          Watch file changes
+  --packages <PACKAGE_DIR>         Directory containing packages
+  --configuration <CONFIGURATION>  The configuration to run under
+  --port <PORT>                    The port to the compilation server

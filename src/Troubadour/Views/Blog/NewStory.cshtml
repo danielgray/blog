@@ -1,0 +1,29 @@
+﻿@model Troubadour.ViewModels.StoryViewModel
+
+@section Scripts {
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/medium-editor/dist/js/medium-editor.js"></script>
+    <script src="~/lib/angular-medium-editor/dist/angular-medium-editor.js"></script>
+
+    <script src="~/js/app-story.js"></script>
+    <script src="~/js/storyController.js"></script>
+}
+
+<div class="" ng-app="app-story">
+
+    <div ng-controller="storyController as vm">
+
+            <h1 ng-model="vm.newStory.title" medium-editor bind-options="{disableReturn: true, toolbar: false}">
+                Title
+            </h1>
+
+            <medium-editor ng-model="vm.newStory.content" bind-options="{'toolbar': {'buttons': ['bold', 'italic', 'underline']}}">
+                Content
+            </medium-editor>
+            
+            <div class="form-group">
+                <input type="submit" value="Publish" class="btn btn-success" ng-disabled="newStoryForm.$invalid" ng-click="vm.addStory()" />
+            </div>
+
+    </div>
+</div>

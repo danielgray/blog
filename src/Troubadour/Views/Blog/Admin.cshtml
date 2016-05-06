@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Troubadour.Models.Story>
+
+@{
+    ViewBag.Title = "Troubadour Admin";
+}
+
+@section Scripts {
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/medium-editor/dist/js/medium-editor.min.js"></script>
+    <script src="~/lib/angular-medium-editor/dist/angular-medium-editor.min.js"></script>
+
+    <script src="~/js/app-story.js"></script>
+    <script src="~/js/adminController.js"></script>
+}
+
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+
+    <div class="col-sm-8">
+
+        <h1>Your stories</h1>
+
+        <nav>
+            <ul class="pager">
+                <li><a asp-action="NewStory" asp-controller="Blog">Write a story</a></li>
+            </ul>
+        </nav>
+
+        <br />
+
+        @foreach (var story in Model)
+        {
+            <article>
+
+                <h2>@story.Title</h2>
+
+                <p>Published on @story.PublishedAt.ToString("MMM dd, yyyy")</p>
+
+                <a class="btn btn-default" asp-action="EditStory" asp-controller="Blog" asp-route-id="@story.Id">Edit</a>
+                <a class="btn btn-danger" href="">Delete</a>
+
+            </article>
+        }
+
+
+
+        @*<div class="" ng-app="app-story">
+
+                <div ng-controller="adminController as vm">
+
+                    <div ng-repeat="story in vm.stories">
+
+                        <article>
+
+                            <h2>{{ story.title }}</h2>
+
+                            <p>Posted by <a href="#">{{ story.author }}</a> on {{ story.publishedAt | date: 'MMM dd, yyyy' }}</p>
+
+                            <a asp-action="EditStory" asp-controller="Blog" asp-route-id="{{ story.id }}">Edit</a>
+
+                            <input type="submit" value="Delete" class="btn btn-danger" ng-click="vm.deleteStory(story)" />
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>*@
+
+    </div>
+
+    <div class="col-sm-2">
+    </div>
+
+</div>

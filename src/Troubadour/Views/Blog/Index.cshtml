@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Troubadour.Models.Story>
+
+@{
+    ViewBag.Title = "Sayaka";
+}
+
+<div class="row">
+
+    <div class="col-sm-2">
+    </div>
+
+    <div class="col-sm-8">
+
+        <h1 class="text-center hero-title">Sayaka</h1>
+
+        @foreach (var story in Model)
+        {
+            <article>
+                <h1><a asp-action="Story" asp-controller="Blog" asp-route-id="@story.Id">@story.Title</a></h1>
+      
+                <p>@story.PublishedAt.ToString("MMM dd, yyyy")</p>
+         
+                <br />
+
+                @Html.Raw(@story.Content)
+            </article>
+        }
+
+    </div>
+
+    <div class="col-sm-2">
+    </div>
+
+</div>

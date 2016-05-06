@@ -1,0 +1,88 @@
+﻿@model Troubadour.Models.Story
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@section Scripts {
+    <script src="~/lib/angular/angular.min.js"></script>
+
+    <script src="~/js/app-response.js"></script>
+    <script src="~/js/responseController.js"></script>
+}
+
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+
+    <div class="col-sm-8">
+        <article>
+
+            <h1 class="text-center">@Model.Title</h1>
+
+            <div class="post-time">@Model.PublishedAt.ToString("MMM dd, yyyy")</div>
+
+            <br />
+
+            @Html.Raw(Model.Content)
+
+        </article>
+    </div>
+    
+    <div class="col-sm-2">
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-sm-2">
+    </div>
+
+    <div class="col-sm-8">
+
+        @foreach (var tag in Model.Tags)
+        {
+            <span class="label label-default">@tag.Name</span>
+        }
+
+    </div>
+
+    <div class="col-sm-2">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+
+    <div class="col-sm-8">
+
+        <div class="" ng-app="app-response">
+
+            <div ng-controller="responseController as vm">
+
+                <br />
+
+                <p>Responses</p>
+
+                <form>
+                    <div class="form-group">
+                        <label for="response"></label>
+                        <textarea class="form-control" rows="3" placeholder="Write a response..." ng-model="vm.content"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="vm.addResponse()" >Submit</button>
+                </form>
+
+                @foreach (var response in Model.Responses)
+                {
+                    <span class="label label-default">@response.Content</span>
+                }
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-2">
+        </div>
+</div>*@

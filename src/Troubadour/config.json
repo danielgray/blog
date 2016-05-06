@@ -1,0 +1,10 @@
+﻿{
+  "AppSettings": {
+    "SiteEmailAddress" :  "daniel@gmail.com"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\v11.0;Database=Troubadour;Trusted_Connection=True;MultipleActiveResultSets=True;"
+    }
+  }
+}
